@@ -1,4 +1,4 @@
-# online_class_front
+# shopping_mall_front
 
 ## Project setup
 ```

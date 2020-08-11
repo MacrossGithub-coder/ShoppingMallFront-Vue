@@ -13,6 +13,13 @@ export const loginApi = (phone, pwd) => axios.post("/api/v1/pri/user/login", {
     "pwd": pwd
 })
 
+//注销接口
+export const logoutApi = (token) => axios.get("/api/v1/pri/user/logout", {
+    params: {
+        "token": token
+    }
+})
+
 //查询用户信息接口
 export const getUserInfoApi = (token) => axios.get("/api/v1/pri/user/find_by_token", {
     params: {

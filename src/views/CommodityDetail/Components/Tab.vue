@@ -6,18 +6,18 @@
 
     <component
       :commodityInfo="commodityInfo"
-      :is='selectedLabel==="商品介绍"?"Summary":"Catalog" '
+      :is='selectedLabel==="商品介绍"?"Summary":"Point" '
     ></component>
   </div>
   
 </template>
 
 <script>
-import Catalog from "./Catalog";
+import Point from "./Point";
 import Summary from "./Summary";
 export default {
   components: {
-    Catalog,
+    Point,
     Summary
   },
 

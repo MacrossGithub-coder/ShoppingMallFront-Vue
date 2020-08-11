@@ -17,7 +17,7 @@
         </div>
       </div>
       <router-link :to="{path:'/order'}">
-        <button v-if="getToken !== ''" class="green1" >查看订单</button>
+        <button v-if="getToken !== ''" class="green1">查看订单</button>
       </router-link>
       <button v-if="getToken !== ''" class="green2" @click="signOut">退出登录</button>
     </div>
@@ -27,7 +27,7 @@
 
 <script>
 import CommonFooter from "@/components/CommonFooter";
-import { getUserInfoApi } from "@/api/getData.js";
+import { getUserInfoApi, logoutApi } from "@/api/getData.js";
 import headImg from "@/assets/logo.png";
 export default {
   components: {
@@ -60,11 +60,17 @@ export default {
       }
     },
     async signOut() {
-      await this.$store.dispatch("clearToken");
-      localStorage.removeItem("token");
-      this.state = 0;
+      try {
+        const result = await logoutApi(this.getToken);
 
-      location.reload();
+        await this.$store.dispatch("clearToken");
+        localStorage.removeItem("token");
+        this.state = 0;
+
+        location.reload();
+      } catch (error) {
+        console.log(error);
+      }
     }
   },
 
