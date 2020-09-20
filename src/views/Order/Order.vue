@@ -18,9 +18,18 @@
           <div class="textdiv" style="margin-left: 30px; ">
             <p class="title" style="margin-left: -1px;">{{item.commodity_describe}}</p>
             <p class="price" style="margin-left: -1px;">￥{{(item.total_fee / 100).toFixed(2)}}</p>
-            <router-link :to="{name:'OrderDetail', params:{ order_detail : item } }">
-              <p class="title" style="margin-left: -1px;margin-top: 10px;">查看详情</p>
-            </router-link>
+            <div class="router">
+              <div >
+                <router-link :to="{name:'OrderDetail', params:{ order_detail : item } }">
+                  <p class="title" style="margin-left: -1px;margin-top: 10px;">查看详情</p>
+                </router-link>
+              </div>
+              <div style="float: right;">
+                <router-link :to="{name:'PublicComment', params:{ order_detail : item } }">
+                  <p class="title" style="margin-left: -1px; margin-top: -29px; margin-right: 40px;">商品评价</p>
+                </router-link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -67,6 +76,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.router p {
+  display: inline;
+}
+
 .header {
   display: flex; //flex左右布局
   background-color: #07111b;

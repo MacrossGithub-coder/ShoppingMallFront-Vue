@@ -1,5 +1,6 @@
 <template>
   <div>
+    <search-bar :onChange="onChange" :onSearch="onSearch"></search-bar>
     <home-banner :banners="banners" ></home-banner>
     <commodity-list :commodityList="commodityList"></commodity-list>
     <common-footer></common-footer>

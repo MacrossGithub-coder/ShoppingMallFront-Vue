@@ -10,7 +10,7 @@ import Personal from '../views/Personal/Personal.vue'
 import Register from '../views/Register/Register.vue'
 import Cart from '../views/Cart/Cart.vue'
 import OrderDetail from '../views/OrderDetail/OrderDetail.vue'
-
+import publicComment from '../views/PublicComment/publicComment.vue'
 Vue.use(VueRouter)
 
   const routes = [
@@ -62,7 +62,13 @@ Vue.use(VueRouter)
     name: 'OrderDetail',
     component:OrderDetail,
     meta : {requiresAuth: true}
+  },
+  {
+    path: '/publicComment',
+    name: 'PublicComment',
+    component: publicComment
   }
+  
 ]
 
 const router = new VueRouter({

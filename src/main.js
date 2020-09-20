@@ -3,6 +3,9 @@ import './cube-ui'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import 'vue-search-bar/dist/vue-search-bar.min.css';
+import { SearchBar } from 'vue-search-bar';
+Vue.use(SearchBar);
 
 Vue.config.productionTip = false
 
