@@ -1,7 +1,12 @@
 <template>
   <div>
-    <search-bar :onChange="onChange" :onSearch="onSearch"></search-bar>
-    <home-banner :banners="banners" ></home-banner>
+    <!-- <search-bar :onChange="onChange" :onSearch="onSearch"></search-bar> -->
+    <form>
+      <input type="search" name="search" style="outline:none" placeholder="零食" class="searchbox" />
+      <!-- <img src="1.png" class="img" /> -->
+      <input type="submit" class="button" style="outline:none" value="搜索" />
+    </form>
+    <home-banner :banners="banners"></home-banner>
     <commodity-list :commodityList="commodityList"></commodity-list>
     <common-footer></common-footer>
   </div>
@@ -59,5 +64,43 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style ang="scss" scoped>
+ .searchbox{
+  margin-top: 10px; 
+  margin-left: 10px;
+  width: 100px;
+  box-sizing: border-box;
+  border: 1px solid rgba(60,64,67,0.15);
+  border-radius: 40px;
+  font-size: 10px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 10px 5px 10px 10px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+/* .searchbox:focus {
+  width: 80%;
+} */
+.img{
+
+			max-height: 80px;
+			position: absolute;
+			left: 202px;
+			top: 98px;
+		}
+
+.button{
+  font-size: 10px;
+  border-radius: 40px;
+  background-color:#C0C0C0;;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+} 
 </style>
